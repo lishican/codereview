@@ -1,0 +1,14 @@
+.DS_Store
+.vscode
+build/
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn.lock
+
+# Emacs temp files
+*~
+\#*\#
+.\#*
+
+packages/grpc-native-core/src/node/

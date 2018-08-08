@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "432f114b-25c6-4155-8dfe-b357f407a162",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "ic_coupon_item_new": {
+      "ver": "1.0.3",
+      "uuid": "88cea8f5-55e1-4c92-b76d-24f7c1b493ff",
+      "rawTextureUuid": "432f114b-25c6-4155-8dfe-b357f407a162",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 8,
+      "width": 44,
+      "height": 32,
+      "rawWidth": 48,
+      "rawHeight": 48,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

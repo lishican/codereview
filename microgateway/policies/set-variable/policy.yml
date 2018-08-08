@@ -1,0 +1,85 @@
+policy: 1.0.0
+
+info:
+  title: Set Variable
+  name: set-variable
+  version: 1.0.0
+  description: Sets Variables in the runtime
+  appliesTo:
+    - API
+  contact:
+    name: IBM API Connect
+    url: http://www.ibm.com/apiconnect
+    email: ibmapi@us.ibm.com
+
+attach:
+  - rest
+  - soap
+
+properties:
+  $schema: "http://json-schema.org/draft-04/schema#"
+  title: Set, Add or Clear a runtime variable
+  description: Set, Add or Clear a runtime variable
+  type: "object"
+  required:
+    - "actions"
+  properties:
+    title:
+      label: Policy title 
+      description: Short but descriptive name for this policy
+      type: "string"
+    description:
+      label: Policy description
+      description: Longer and descriptive name for this policy
+      type: "string"
+    actions:
+      type: "array"
+      items:
+        oneOf:
+          - type: "object"
+            additionalProperties: false
+            required:
+              - "set"
+              - "value"
+            properties:
+              set:
+                label: Variable name
+                description: The name of the variable that will be set
+                type: "string"
+              value:
+                label: Variable value
+                description: The value that the variable will be set to
+                oneOf:
+                  - type: "string"
+                  - type: "number"
+                  - type: "boolean"
+                  - type: "integer"
+          - type: "object"
+            additionalProperties: false
+            required:
+              - "add"
+              - "value"
+            properties:
+              add:
+                label: Variable name
+                description: The name of the variable that will be added
+                type: "string"
+              value:
+                label: Variable value
+                description: Value for the variable that will be added
+                oneOf:
+                  - type: "string"
+                  - type: "number"
+                  - type: "boolean"
+                  - type: "integer"
+          - type: "object"
+            additionalProperties: false
+            required:
+              - "clear"
+            properties:
+              clear:
+                label: Variable name
+                description: The name of the variable that will be cleared
+                type: "string"
+  throw:
+    - PropertyError

@@ -1,0 +1,14 @@
+option java_package = "com.snowcattle.game.message.auto.tcp.online.client";
+option java_outer_classname = "OnlineTCPClientProBuf";
+
+message OnlineHeartTCPClientProBuf
+{
+    required int32 id = 1;
+}
+
+message OnlineLoginTCPClientProBuf
+{
+    required int32 id = 1;
+}
+
+

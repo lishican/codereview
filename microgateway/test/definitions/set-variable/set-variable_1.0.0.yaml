@@ -1,0 +1,62 @@
+info:
+  version: 1.0.0
+  title: set-variable
+  x-ibm-name: set-variable
+  description: set-variable test suite
+basePath: /set-variable
+swagger: '2.0'
+paths:
+  /set-variable:
+    post:
+      responses:
+        '200':
+          description: 200 OK
+x-ibm-configuration:
+  assembly:
+    execute:
+      - if:
+          condition: "'$(request.headers.set-variable-case)' === 'set'"
+          execute:
+            - set-variable:
+                actions:
+                  - set: message.headers.X-Test-Set-Variable
+                    value: value1
+      - if:
+          condition: "'$(request.headers.set-variable-case)' === 'set-and-add'"
+          execute:
+            - set-variable:
+                actions:
+                  - set: message.headers.X-Test-Set-Variable
+                    value: value1
+                  - add: message.headers.X-Test-Set-Variable
+                    value: value2
+      - if:
+          condition: "'$(request.headers.set-variable-case)' === 'clear'"
+          execute:
+            - set-variable:
+                actions:
+                  - clear: message.headers.to-be-deleted
+      - set-variable:
+          actions:
+            - set: target-url
+              value: http://localhost:8889
+      - invoke:
+          title: invoke
+          target-url: $(target-url)
+      - if:
+          condition: "'$(request.headers.custom-status-code)'"
+          execute:
+            - set-variable:
+                actions:
+                  - set: message.status.code
+                    value: $(request.headers.custom-status-code)
+      - if:
+          condition: "'$(request.headers.custom-status-reason)'"
+          execute:
+            - set-variable:
+                actions:
+                  - set: message.status.reason
+                    value: $(request.headers.custom-status-reason)
+
+schemes:
+  - http

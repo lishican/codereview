@@ -1,0 +1,62 @@
+{
+  "name": "egg-redis",
+  "version": "2.0.0",
+  "description": "Redis plugin for egg",
+  "eggPlugin": {
+    "name": "redis"
+  },
+  "files": [
+    "app.js",
+    "agent.js",
+    "lib",
+    "config"
+  ],
+  "keywords": [
+    "egg",
+    "eggPlugin",
+    "egg-plugin",
+    "redis",
+    "database"
+  ],
+  "dependencies": {
+    "ioredis": "^3.2.2"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "egg": "^2.3.0",
+    "egg-bin": "^4.4.0",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.14.0",
+    "eslint": "^4.18.1",
+    "eslint-config-egg": "^7.0.0",
+    "supertest": "^3.0.0",
+    "utility": "^1.9.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "type": "travis",
+    "version": "8, 9",
+    "license": true,
+    "services": "redis-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eggjs/egg-redis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eggjs/egg/issues"
+  },
+  "homepage": "https://github.com/eggjs/egg-redis#readme",
+  "author": "jtyjty99999",
+  "license": "MIT"
+}

@@ -1,0 +1,13 @@
+product: 1.0.0
+info:
+  name: basic-product
+  title: basic-product
+  version: 1.0.0
+apis:
+  basic:
+    name: 'basic:1.0.0'
+plans:
+  Default:
+    title: Default
+    apis:
+      basic: {}

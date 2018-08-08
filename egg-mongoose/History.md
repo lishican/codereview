@@ -1,0 +1,36 @@
+
+2.2.0 / 2018-03-02
+==================
+
+  * feat: support multi client (#15)
+
+2.1.1 / 2017-09-18
+==================
+
+  * feat:support custom promise, access mongoose source (#12)
+
+2.1.0 / 2017-05-16
+==================
+
+  * refactor: use native promise (#10)
+  * docs: update example to `v2.0.0` (#9)
+
+2.0.0 / 2017-05-08
+==================
+
+  * feat: [BREAKING_CHANGE] add unregular model judgement (#7)
+
+1.1.1 / 2017-03-11
+==================
+
+  * fix: remove heartbeat (#4)
+
+1.1.0 / 2017-03-02
+==================
+
+  * feat:support uri option (#3)
+
+1.0.0 / 2017-02-16
+==================
+
+  * feat: first implement (#2)

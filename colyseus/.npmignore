@@ -1,0 +1,13 @@
+yarn.lock
+*.log
+*.tgz
+*.psd
+*~
+NOTES.txt
+TODO
+quick-tests
+media
+src
+docs
+test
+usage

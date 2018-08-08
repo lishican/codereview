@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - "0.10"
+  - "0.12"
+  - "1.8"
+  - "2.5"
+  - "3.3"
+  - "4.8"
+  - "5.12"
+  - "6.12"
+  - "7.10"
+  - "8.9"
+  - "9.5"
+sudo: false
+cache:
+  directories:
+    - node_modules
+before_install:
+  - "npm config set shrinkwrap false"
+  - "test ! -d node_modules || npm prune"
+  - "test ! -d node_modules || npm rebuild"
+script:
+  - "npm run-script test-travis"
+  - "npm run-script lint"
+after_script:
+  - "test -d .nyc_output && npm install coveralls@2 && nyc report --reporter=text-lcov | coveralls"

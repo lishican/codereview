@@ -1,0 +1,65 @@
+{
+  "name": "egg-commerce",
+  "version": "1.0.0",
+  "description": "yangran",
+  "private": true,
+  "dependencies": {
+    "alipay-ftof": "^0.1.5",
+    "alipay-mobile": "^2.2.1",
+    "egg": "^2.2.1",
+    "egg-alinode": "^2.0.1",
+    "egg-multipart": "^2.0.0",
+    "egg-oss": "^1.1.0",
+    "egg-redis": "^1.0.2",
+    "egg-scripts": "^2.5.0",
+    "egg-sequelize": "^3.1.1",
+    "egg-session-redis": "^1.0.0",
+    "lodash": "^4.17.5",
+    "lru-cache": "^4.1.1",
+    "md5": "^2.2.1",
+    "moment": "^2.20.1",
+    "mysql2": "^1.5.2",
+    "qr-image": "^3.2.0",
+    "stream-wormhole": "^1.0.3",
+    "uuid": "^3.2.1",
+    "validator": "^9.4.1"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.0.0",
+    "egg-bin": "^4.3.5",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.14.0",
+    "eslint": "^4.11.0",
+    "eslint-config-egg": "^6.0.0",
+    "sequelize-auto": "^0.4.29",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "start": "ENABLE_NODE_LOG=YES egg-scripts start --daemon --title=egg-server-egg-commerce -p 3000",
+    "stop": "egg-scripts stop --title=egg-server-egg-commerce",
+    "dev": "egg-bin dev --port 7001",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "migrate:new": "egg-sequelize migration:create",
+    "migrate:up": "egg-sequelize db:migrate",
+    "migrate:down": "egg-sequelize db:migrate:undo"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "yangran",
+  "license": "MIT"
+}

@@ -1,0 +1,20 @@
+rf1.w2.org rulesFile://{rulesFile.js} file://{rulesFile.js}
+rf2.w2.org rulesFile://{rulesFile.txt} file://{rulesFile.txt}
+rf3.w2.org rulesFile://{rulesFile2.js} file://{test3.json}
+delete.test.whistlejs.com reqHeaders://(x-delete-req=test-req&x-delete-all=all) resHeaders://(x-delete-res=test-res&x-delete-all=all) filter://https
+delete1.test.whistlejs.com reqHeaders://(x-delete-req=test-req&x-delete-all=all) resHeaders://(x-delete-res=test-res&x-delete-all=all) filter://https
+https://tp.w2.org/index.html test://global
+tp.w2.org 127.0.0.1:5566 filter://https
+test.whistlejs.com/ups.html filter://https urlParams://(rule=ws1.test.whistlejs.com)
+wss://test.whistlejs.com/index2.html?abc=321 filter://https params://(rule=ws1.test.whistlejs.com)
+
+reqscript.w2.org reqScript://{reqScript.js} resScript://{resScript.js}
+
+ws://status.whistlejs.com status://101
+tunnel://127.0.0.1:8080 filter://https xproxy://127.0.0.1:19999
+http://127.0.0.1:6666/abc.htm 127.0.0.1:8080
+test.internal.path.com proxy://127.0.0.1:8080
+
+params.test.whistlejs.com/index.html resMerge://(resMerge=test) resType://js
+weinre1.test2.whistlejs.com:1234 weinre://xxx file://(hello) log://test resType://html enable://capture ignore://plugin
+weinre1.test2.whistlejs.com weinre://xxx file://(hello) log://test resType://js enable://capture ignore://plugin

@@ -1,0 +1,9 @@
+test/fixtures
+**/app/public
+node_modules
+logs
+run
+coverage
+hackernews-async-ts/**/*.js
+assets-with-roadhog/app/assets/**/*.js
+**/app/assets

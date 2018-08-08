@@ -1,0 +1,379 @@
+[{
+  "id": "564b7b3ae4b0869c782eddaf",
+  "url": "https://example.com/v1/catalogs/564b48aae4b0869c782edc2b/products/564b7b3ae4b0869c782eddaf",
+  "state": "published",
+  "visibility": {
+    "view": {
+      "enabled": true,
+      "type": "public",
+      "tags": [],
+      "orgs": []
+    },
+    "subscribe": {
+      "enabled": true,
+      "type": "authenticated",
+      "tags": [],
+      "orgs": []
+    }
+  },
+  "organization": {
+    "id": "564b48a9e4b0869c782edc24",
+    "name": "apim",
+    "title": "Climb On"
+  },
+  "catalog": {
+    "id": "564b48aae4b0869c782edc2b",
+    "url": "https://example.com/v1/catalogs/564b48aae4b0869c782edc2b",
+    "name": "sb",
+    "title": "Sandbox",
+    "sandbox": true,
+    "default": false
+  },
+  "document": {
+    "product": "1.0.0",
+    "info": {
+      "name": "uber",
+      "title": "Uber Product",
+      "version": "1.0.0"
+    },
+    "visibility": {
+      "view": {
+        "enabled": true,
+        "type": "public",
+        "tags": [],
+        "orgs": []
+      },
+      "subscribe": {
+        "enabled": true,
+        "type": "authenticated",
+        "tags": [],
+        "orgs": []
+      }
+    },
+    "apis": 
+      {
+      "uber-api": {"name": "uber-api:1.0.0"}
+      },
+    "plans": {
+      "gold": {
+        "title": "Gold Plan",
+        "rate-limit": {
+          "hard-limit": false,
+          "value": "1/sec"
+        },
+        "apis": {
+          "uber-api": {}
+        }
+      }
+    }
+  }
+}, {
+  "id": "564b7b44e4b0869c782ede0b",
+  "url": "https://example.com/v1/catalogs/564b48aae4b0869c782edc2b/products/564b7b44e4b0869c782ede0b",
+  "state": "published",
+  "visibility": {
+    "view": {
+      "enabled": true,
+      "type": "public",
+      "tags": [],
+      "orgs": []
+    },
+    "subscribe": {
+      "enabled": true,
+      "type": "authenticated",
+      "tags": [],
+      "orgs": []
+    }
+  },
+  "organization": {
+    "id": "564b48a9e4b0869c782edc24",
+    "name": "apim",
+    "title": "Climb On"
+  },
+  "catalog": {
+    "id": "564b48aae4b0869c782edc2b",
+    "url": "https://example.com/v1/catalogs/564b48aae4b0869c782edc2b",
+    "name": "sb",
+    "title": "Sandbox",
+    "sandbox": true,
+    "default": false
+  },
+  "document": {
+    "product": "1.0.0",
+    "info": {
+      "name": "apim",
+      "version": "1.0.0",
+      "title": "ClimbOn",
+      "contact": {
+        "name": "George O Jungle",
+        "email": "george.o.jungle@apim.com",
+        "url": "http://www.apim.com"
+      },
+      "license": {
+        "name": "Free for all climbers",
+        "url": "http://www.apim.com/user-agreement"
+      },
+      "termsOfService": "Thy shalt not weigh more than thy fridge."
+    },
+    "visibility": {
+      "view": {
+        "enabled": true,
+        "type": "public",
+        "tags": [],
+        "orgs": []
+      },
+      "subscribe": {
+        "enabled": true,
+        "type": "custom",
+        "tags": ["tag1", "tag2"],
+        "orgs": ["Consumer-Org-1", "Consumer-Org-2"]
+      }
+    },
+    "apis":
+      { 
+      "ascents": {"name": "ascents:1.0.0"},
+      "forecasts": {"name": "forecasts:1.0.0"},
+      "routes": {"name": "routes:1.0.0"}
+       },
+    "plans": {
+      "trial": {
+        "title": "Trial Climb On",
+        "description": "blah blah",
+        "approval": false,
+        "rate-limit": {
+          "hard-limit": true,
+          "value": "60/hour"
+        },
+        "apis": 
+          {
+          "ascents": {}
+          }
+      },
+      "silver": {
+        "title": "Silver Climb On",
+        "description": "blah blah",
+        "approval": true,
+        "rate-limit": {
+          "hard-limit": false,
+          "value": "100/min"
+        },
+        "rate-limits": {
+          "plan-per-10-min": {
+            "value": "100/10minute",
+            "hard-limit": true
+          },
+          "plan-per-hour": {
+            "value": "10/1hour",
+            "hard-limit": true
+          }
+        },
+        "apis": 
+          {
+          "ascents": {
+            "operations": [
+              {
+                "operationId": "ratelimit8"
+              },
+              {
+                "path": "/ratelimit9",
+                "operation": "get"
+              },
+              {
+                "path": "/ratelimit10",
+                "operation": "get",
+                "rate-limits": {
+                  "per-hour": {
+                    "value": "2/1hour",
+                    "hard-limit": true
+                  }
+                }
+              },
+              {
+                "path": "/ratelimit11",
+                "operation": "get",
+                "rate-limits": {
+                  "per-hour": {
+                    "value": "2/1hour",
+                    "hard-limit": true
+                  },
+                  "unl": {
+                    "value": "unlimited",
+                    "hard-limit": true
+                  }
+                }
+              },
+              {
+                "path": "/ratelimit11R",
+                "operation": "get",
+                "rate-limits": {
+                  "unl": {
+                    "value": "unlimited",
+                    "hard-limit": true
+                  },
+                  "per-hour": {
+                    "value": "2/1hour",
+                    "hard-limit": true
+                  },
+                  "per-day": {
+                    "value": "3/1day",
+                    "hard-limit": true
+                  }
+                }
+              },
+              {
+                "path": "/ratelimit12",
+                "operation": "get",
+                "rate-limit": {
+                  "value": "unlimited",
+                  "hard-limit": true
+                }
+              },
+              {
+                "path": "/ratelimit13",
+                "operation": "get",
+                "rate-limits": {
+                  "unl": {
+                    "value": "unlimited",
+                    "hard-limit": true
+                  }
+                }
+              },
+              {
+                "path": "/ratelimit14",
+                "operation": "get",
+                "rate-limits": {}
+              }
+            ]
+          },
+          "forecasts": {}
+          }
+      },
+      "gold": {
+        "title": "Gold Climb On",
+        "description": "blah blah",
+        "approval": true,
+        "rate-limit": {
+          "hard-limit": false,
+          "value": "1000/min"
+        },
+        "apis": 
+          {
+          "ascents": {
+            "operations": [
+              {
+                "path": "/ratelimit10",
+                "operation": "get",
+                "rate-limits": {
+                  "per-hour": {
+                    "value": "3/1hour",
+                    "hard-limit": true
+                  }
+                }
+              }
+            ]
+          },
+          "routes": {
+            "operations": [
+              {
+                "operationId": "ratelimit1",
+                "rate-limit": {
+                  "value": "2/10minute",
+                  "hard-limit": true
+                }
+              },
+              {
+                "path": "/ratelimit2",
+                "operation": "get",
+                "rate-limit": {
+                  "value": "3/10minute",
+                  "hard-limit": true
+                }
+              },
+              {
+                "operationId": "ratelimit4",
+                "rate-limits": {
+                  "per-10-min": {
+                    "value": "2/10minute",
+                    "hard-limit": true
+                  },
+                  "per-hour": {
+                    "value": "4/1hour",
+                    "hard-limit": true
+                  }
+                }
+              },
+              {
+                "path": "/ratelimit5",
+                "operation": "get",
+                "rate-limits": {
+                  "per-10-min": {
+                    "value": "3/10minute",
+                    "hard-limit": true
+                  },
+                  "per-hour": {
+                    "value": "4/1hour",
+                    "hard-limit": true
+                  }
+                }
+              },
+              {
+                "operationId": "ratelimit6",
+                "rate-limits": {
+                  "per-10-min": {
+                    "value": "10/10minute",
+                    "hard-limit": true
+                  },
+                  "per-hour": {
+                    "value": "2/1hour",
+                    "hard-limit": true
+                  }
+                }
+              },
+              {
+                "path": "/ratelimit7",
+                "operation": "get",
+                "rate-limits": {
+                  "per-10-min": {
+                    "value": "10/10minute",
+                    "hard-limit": true
+                  },
+                  "per-hour": {
+                    "value": "3/1hour",
+                    "hard-limit": true
+                  }
+                }
+              },
+              {"operationId": "routes.test1"},
+              {"operationId": "routes.test2"},
+              {"operationId": "routes.test3"},
+              {"operationId": "routes.test5"},
+              {"operationId": "routes.test6"},
+              {"operationId": "routes.find"},
+              {"operationId": "routes.create"},
+              {"operationId": "routes.upsert"},
+              {"operationId": "routes.get.createChangeStream"},
+              {"operationId": "routes.post.createChangeStream"},
+              {"operationId": "routes.count"},
+              {"operationId": "routes.findOne"},
+              {"operationId": "routes.updateAll"},
+              {"operationId": "routes.deleteById"},
+              {"operationId": "routes.findById"},
+              {"operationId": "routes.id.exists"},
+              {"operationId": "routes.prototype.updateAttributes"},
+              {"operationId": "routes.exists"}
+            ]
+          }
+        }
+      },
+      "platinum": {
+        "title": "Platinum Climb On",
+        "description": "blah blah",
+        "approval": true,
+        "rate-limit": {
+          "hard-limit": false,
+          "value": "10000/min"
+        }
+      }
+    }
+  }
+}]

@@ -1,0 +1,20 @@
+1: editbox在h5的情况下没有反应;  升级引擎到1.5.1
+2:Error: not opened
+    at WebSocket.send (C:\Home\workspace\node_js\bycw_game\bycw_server\node_modules\ws\lib\WebSocket.js:358:18)
+    at WebSocket.session_send_encoded_cmd [as send_encoded_cmd] (C:\Home\workspace\node_js\bycw_game\bycw_server\netbus\netbus.js:105:8)
+    at Object.on_recv_server_return (C:\Home\workspace\node_js\bycw_game\bycw_server\apps\gateway\gw_service.js:103:18)
+    at Object.on_recv_server_return (C:\Home\workspace\node_js\bycw_game\bycw_server\netbus\service_manager.js:31:26)
+    at on_recv_cmd_server_return (C:\Home\workspace\node_js\bycw_game\bycw_server\netbus\netbus.js:326:22)
+    at Socket.<anonymous> (C:\Home\workspace\node_js\bycw_game\bycw_server\netbus\netbus.js:388:5)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+
+3: h5 模式下 EditBox如果设置成numberic,数字模式，不能很好的工作;
+4: 打入utag的时候，我用的不是uint32,而是int16这里要改正;
+5: 当我们在异常情况下，同一个session登陆两次的时候gateway会有异常。
+
+
+
+

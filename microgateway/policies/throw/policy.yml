@@ -1,0 +1,27 @@
+policy: 1.1.0
+
+info:
+  title: Throw
+  name: throw
+  version: 1.0.0
+  description: Throw policy for the IBM API Connect
+  contact:
+    name: IBM API Connect
+    url: https://www.ibm.com/apiconnect
+    email: ibmapi@us.ibm.com
+
+properties:
+  type: "object"
+  properties:
+    name:
+      label: Error name
+      description: The name of the error to be thrown
+      type: string
+    message:
+      label: Error message
+      description: The message to be sent with the error
+      type: string
+  required:
+    - name
+  throw:
+    - '*'
